@@ -17,3 +17,6 @@ libs/
 .DS_Store
 Thumbs.db
 desktop.ini
+bin/
+obj/
+libs/

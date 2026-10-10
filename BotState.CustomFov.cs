@@ -59,7 +59,7 @@ public partial class BotState
         if (_fovRosterTick != Server.TickCount)
         {
             ClearFovObservers(); _fovRosterTick = Server.TickCount;
-            foreach (var p in Utilities.GetPlayers())
+            foreach (var p in ControllerScan.Players())
                 if (p.IsValid && p.IsBot && p.PlayerPawn.Value?.Bot is { } native)
                     _fovObservers[native.Handle] = p;
         }

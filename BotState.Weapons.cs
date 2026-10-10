@@ -36,7 +36,7 @@ public partial class BotState
     {
         if (_eliminationHandled || _botController == null) return;
 
-        var activePlayers = Utilities.GetPlayers()
+        var activePlayers = ControllerScan.Players()
             .Where(player => player.IsValid
                 && !player.IsHLTV
                 && ((int)player.TeamNum == (int)CsTeam.Terrorist

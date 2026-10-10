@@ -69,7 +69,7 @@ public partial class BotState
     private static void BroadcastDebug(string msg)
     {
         Console.WriteLine(msg);
-        foreach (var p in Utilities.GetPlayers())
+        foreach (var p in ControllerScan.Players())
         {
             if (p == null || !p.IsValid || p.IsBot || p.IsHLTV) continue;
             p.PrintToConsole(msg);
@@ -270,7 +270,7 @@ public partial class BotState
     // Resolves a native CCSBot pointer back to its player controller
     private static CCSPlayerController? FindBotControllerByAddress(nint botAddress)
     {
-        foreach (var player in Utilities.GetPlayers())
+        foreach (var player in ControllerScan.Players())
         {
             if (!player.IsValid || !player.IsBot) continue;
 
